@@ -64,8 +64,8 @@ public partial class ScreenArea : HBoxContainer {
 
 		AddSeparator(infoBox);
 
-		var weatherLabel = new Label();
-		weatherLabel.Text = "weather";
+		weatherLabel = new Label();
+		weatherLabel.Text = "loading...";
 		weatherLabel.VerticalAlignment = VerticalAlignment.Center;
 		weatherLabel.CustomMinimumSize = new Vector2(0, 24);
 		infoBox.AddChild(weatherLabel);
@@ -86,10 +86,6 @@ public partial class ScreenArea : HBoxContainer {
 		infoBox.AddChild(groupButton);
 
 		AddSeparator(infoBox);
-
-		// listen for weather report
-		if (WeatherManager.Instance != null)
-			WeatherManager.Instance.ReceivedWeatherInfo += info => weatherLabel.Text = info;
 	}
 
     void OnWindowTitleChanged(Window window) {
@@ -228,6 +224,8 @@ public partial class ScreenArea : HBoxContainer {
 
 			timeLabel.Text = dateString;
 			lastUpdate = time;
+
+			weatherLabel.Text = WeatherManager.Instance?.CurrentTemperature;
 		}
 	}
 
