@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KebWM-GD4", "KebWM-GD4.csproj", "{B6258592-1784-45CA-8304-46AD9BA58FC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6258592-1784-45CA-8304-46AD9BA58FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6258592-1784-45CA-8304-46AD9BA58FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6258592-1784-45CA-8304-46AD9BA58FC4}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{B6258592-1784-45CA-8304-46AD9BA58FC4}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{B6258592-1784-45CA-8304-46AD9BA58FC4}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{B6258592-1784-45CA-8304-46AD9BA58FC4}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

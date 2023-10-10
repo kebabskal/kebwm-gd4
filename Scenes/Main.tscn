@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx6c375pfq1w4"]
+
+[ext_resource type="Script" path="res://Scripts/WindowManagerUI.cs" id="1_f1kmx"]
+[ext_resource type="Theme" uid="uid://bi83pqoit78wn" path="res://Style/MainTheme.tres" id="1_n8wfw"]
+
+[node name="Window Manager UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_n8wfw")
+script = ExtResource("1_f1kmx")

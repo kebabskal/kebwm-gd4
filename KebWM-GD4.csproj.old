@@ -1,0 +1,13 @@
+<Project Sdk="Godot.NET.Sdk/4.0.0">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>KebWMGD4</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="Vanara.PInvoke.DwmApi" Version="3.4.13" />
+    <PackageReference Include="Vanara.PInvoke.User32" Version="3.4.13" />
+  </ItemGroup>
+</Project>

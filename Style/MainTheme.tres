@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bi83pqoit78wn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mibr"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gui65"]
+color = Color(0.152941, 0.152941, 0.152941, 1)
+vertical = true
+
+[resource]
+default_font_size = 12
+Button/styles/focus = SubResource("StyleBoxEmpty_4mibr")
+VSeparator/constants/separation = 12
+VSeparator/styles/separator = SubResource("StyleBoxLine_gui65")
