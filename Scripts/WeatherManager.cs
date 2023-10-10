@@ -1,6 +1,8 @@
 using System.Net.Http;
 using System.Threading;
+using Godot;
 using Newtonsoft.Json;
+using HttpClient = System.Net.Http.HttpClient;
 
 public class WeatherManager {
 	public string CurrentTemperature = "loading...";
@@ -9,9 +11,11 @@ public class WeatherManager {
 	public static WeatherManager Instance;
 	public event System.Action<string> ReceivedWeatherInfo;
 
+	// Settings
+	string lat = "0.0";
+	string lon = "0.0";
+
 	public WeatherManager() {
-		return; // TODO: Remove this and make the weather display work again
-		
 		thread = new Thread(UpdateWeatherThread);
 		thread.Start();
 		Instance = this;
@@ -19,10 +23,9 @@ public class WeatherManager {
 
 	async void UpdateWeatherThread() {
 		while (true) {
+			GD.Print("Update Weather...");
 			try {
 				var client = new HttpClient();
-				var lat = 0.0;
-				var lon = 0.0;
 				var url = $"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={lat}&lon={lon}";
 				var request = new HttpRequestMessage(HttpMethod.Get, url);
 				request.Headers.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36");
@@ -34,11 +37,14 @@ public class WeatherManager {
 				dynamic weather = JsonConvert.DeserializeObject(body);
 
 				var temp = weather.properties.timeseries[0].data.instant.details.air_temperature;
-				CurrentTemperature = $"{temp}°C";
+				CurrentTemperature = $"{temp}°C".Replace(",", ".");
 
+				
 				ReceivedWeatherInfo?.Invoke(CurrentTemperature);
 			} catch (System.Exception ex) {
 				System.Console.WriteLine($"Exception getting weather: {ex}");
+				CurrentTemperature = "Error";
+				ReceivedWeatherInfo?.Invoke("Error");
 			}
 
 			Thread.Sleep(10000);
